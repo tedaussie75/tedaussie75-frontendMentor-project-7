@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --star-background: #282e38;
+    --light-grey: hsl(217, 12%, 63%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+    --orange: hsl(25, 97%, 53%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--very-dark-blue);
+    font-family: "Overpass", sans-serif;
+}
+
+div.form-container,
+div.submit-message {
+    max-width: 320px;
+    background: linear-gradient(180deg, rgba(35,41,51,1) 0%, rgba(25,31,39,1) 100%);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+div.form-container p {
+    margin: 15px 0 25px 0;
+    color: var(--light-grey);
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+div.form-container h2,
+div.submit-message h2 {
+    color: var(--white);
+}
+
+div.form-container .star-icon {
+    display: block;
+    width: 14px;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: var(--star-background);
+    margin-bottom: 40px;
+    transition: transform .3s ease;
+}
+
+div.form-container .star-icon:hover {
+    transform: rotate(-360deg);
+}
+
+div.form-container .star-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+div.form-container form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+div.form-container form .checkbox-input {
+    visibility: hidden;
+    position: absolute;
+}
+
+div.form-container form label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-grey);
+    padding: 10px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: var(--star-background);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+div.form-container form label:hover {
+    background-color: var(--white);
+    color: black;
+}
+
+div.form-container form input[type=checkbox]:checked + label {
+    background-color: var(--orange);
+    color: black;
+}
+
+div.form-container form input[type="submit"] {
+    width: 100%;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 20px;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background-color: var(--orange);
+    cursor: pointer;
+}
+
+div.form-container form input[type="submit"]:hover {
+    background-color: var(--white);
+}
+
+div.submit-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    position: relative;
+    transition: all .2s ease;
+    transform: scale(.1);
+}
+
+div.submit-message.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+div.submit-message img {
+    width: 150px;
+}
+
+div.submit-message p {
+    text-align: center;
+}
+
+div.submit-message p:first-of-type {
+    font-size: 12px;
+    color: var(--orange);
+    background-color: var(--star-background);
+    padding: 5px 10px;
+    border-radius: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+div.submit-message p:last-of-type {
+    color: var(--light-grey);
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+div.submit-message h2 {
+    margin-bottom: 10px;
+}
+
+.hide {
+    display: none !important;
+}
